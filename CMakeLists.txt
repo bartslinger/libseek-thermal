@@ -20,7 +20,13 @@ endif ()
 
 message (STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
-find_package (OpenCV REQUIRED)
+#find_package (OpenCV REQUIRED)
+set(OpenCV_INCLUDE_DIRS "/home/bart/git/opencv/platforms/linux/build_hardfp/install/include")
+
+set(OpenCV_LIBRARIES "/home/bart/git/opencv/platforms/linux/build_hardfp/install/lib/libopencv_core.so"
+	"/home/bart/git/opencv/platforms/linux/build_hardfp/install/lib/libopencv_highgui.so"
+	"/home/bart/git/opencv/platforms/linux/build_hardfp/install/lib/libopencv_imgcodecs.so"
+	"/home/bart/git/opencv/platforms/linux/build_hardfp/install/lib/libopencv_imgproc.so")
 
 add_subdirectory (src)
 add_subdirectory (examples)

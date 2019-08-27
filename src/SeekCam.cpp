@@ -88,6 +88,9 @@ bool SeekCam::grab()
 
         } else if (frame_id() == 1) {
             m_raw_frame.copyTo(m_flat_field_calibration_frame);
+
+        } else {
+            std::cout << "FrameID: " << std::to_string(frame_id()) << std::endl;
         }
     }
 

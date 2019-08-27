@@ -26,7 +26,7 @@ add_library (seek SHARED ${SRC})
 
 target_link_libraries (seek
     ${OpenCV_LIBS}
-    -lusb-1.0
+    /home/bart/bebop_install/lib/libusb-1.0.so
 )
 
 # install library target and header files
