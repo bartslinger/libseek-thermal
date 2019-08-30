@@ -37,14 +37,17 @@ int main(int argc, char** argv)
         cv::normalize(frame, grey_frame, 0, 255, cv::NORM_MINMAX);
 
         grey_frame.convertTo(grey_small, CV_8UC1);
-        cv::applyColorMap(grey_small, color, cv::COLORMAP_HOT);
+
+        cv::Mat grey_small_rotated(320, 240, CV_8UC1);
+        cv::rotate(grey_small, grey_small_rotated, cv::RotateFlags::ROTATE_90_CLOCKWISE);
+        cv::applyColorMap(grey_small_rotated, color, cv::COLORMAP_HOT);
 
         std::vector<uchar> buffer(200000);
         cv::imencode(".jpg", color, buffer);
         img_pub.publish(buffer);
         std::cout << "Published " << std::to_string(buffer.size()) << std::endl;
 
-        usleep(500000);
+//        usleep(100000);
 
     }
 }

@@ -2,16 +2,15 @@ include_directories (
     ${libseek-thermal_SOURCE_DIR}/src
     ${libseek-thermal_SOURCE_DIR}/examples
     ${OpenCV_INCLUDE_DIRS}
-    /usr/include/libusb-1.0
-    /home/bart/bebop_install/include
+    /home/bart/install_bebop/include
 )
 
 link_libraries (
     seek_static
 #    -lboost_program_options
     ${OpenCV_LIBRARIES}
-    /home/bart/bebop_install/lib/libusb-1.0.so
-    /home/bart/bebop_install/lib/libnng.a
+    /home/bart/install_bebop/lib/libnng.a
+    /home/bart/install_bebop/lib/libusb-1.0.so
     pthread
 )
 

@@ -17,7 +17,7 @@ set (SOURCES
 set (SRC ${SOURCES} ${HEADERS})
 
 include_directories (
-    /usr/include/libusb-1.0
+    /home/bart/install_bebop/include/libusb-1.0
     ${OpenCV_INCLUDE_DIRS}
 )
 
@@ -26,7 +26,7 @@ add_library (seek SHARED ${SRC})
 
 target_link_libraries (seek
     ${OpenCV_LIBS}
-    /home/bart/bebop_install/lib/libusb-1.0.so
+    /home/bart/install_bebop/lib/libusb-1.0.so
 )
 
 # install library target and header files
